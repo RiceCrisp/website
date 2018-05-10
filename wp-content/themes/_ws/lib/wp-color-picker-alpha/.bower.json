@@ -1,0 +1,13 @@
+{
+  "name": "wp-color-picker-alpha",
+  "homepage": "https://github.com/kallookoo/wp-color-picker-alpha",
+  "_release": "dcb1215c1b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "dcb1215c1bc43a115cf697acc0bb437001dde49b"
+  },
+  "_source": "https://github.com/kallookoo/wp-color-picker-alpha.git",
+  "_target": "*",
+  "_originalSource": "kallookoo/wp-color-picker-alpha"
+}

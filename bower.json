@@ -1,0 +1,19 @@
+{
+  "name": "walkersands",
+  "description": "Template for wordpress themes",
+  "main": "index.js",
+  "authors": [
+    "Blake Boucher"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "svg4everybody": "^2.1.9",
+    "tiny-slider": "^2.2.4",
+    "vue": "^2.5.9",
+    "wp-color-picker-alpha": "kallookoo/wp-color-picker-alpha",
+    "objectFitPolyfill": "^2.1.1",
+    "bower-skrollr": "^0.6.26"
+  }
+}

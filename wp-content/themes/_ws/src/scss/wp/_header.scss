@@ -1,0 +1,207 @@
+// Desktop
+#site-header {
+  position: relative;
+  z-index: 10;
+  // box-shadow: $shadow;
+  background-color: #fff;
+  .container {
+    align-items: center;
+    justify-content: space-between;
+  }
+  .menu-container {
+    flex: 1;
+    padding-left: $grid-padding;
+    padding-right: $grid-padding;
+  }
+  .logo-title {
+    padding: 0 $grid-padding;
+    height: 100%;
+    .site-title {
+      margin: 0;
+    }
+  }
+  #hamburger {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+    height: 40px;
+    width: 40px;
+    margin: 0 $grid-padding*2 0 0;
+    path {
+      stroke-width: 5;
+      transition: 0.3s;
+    }
+  }
+  #hamburger {
+    & + label .opened {
+      stroke: transparent;
+    }
+    & + label .closed {
+      stroke: $primary;
+    }
+    &:checked {
+      & ~ .menu-container {
+        left: 0;
+      }
+      & + label .opened {
+        stroke: $primary;
+      }
+      & + label .closed {
+        stroke: transparent;
+      }
+    }
+  }
+  .header-menu {
+    text-align: right;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li.menu-item {
+      position: relative;
+      display: inline-block;
+      transition: 0.3s;
+      min-width: 80px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      &:hover {
+        background: #eee;
+        & > .sub-menu {
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+      &.current-menu-item {
+        background: #eee;
+        a {
+          color: $primary;
+        }
+        &:hover {
+          a {
+            color: #fff;
+          }
+        }
+      }
+      &:last-child > ul {
+        right: 0;
+      }
+    }
+    a {
+      display: block;
+      line-height: $menu-height;
+      padding: 0 $grid-padding;
+      text-decoration: none;
+      color: $primary;
+    }
+    input[type=radio] {
+      display: none;
+    }
+    label {
+      display: none;
+      margin: 0;
+      cursor: pointer;
+      svg {
+        display: block;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    ul.sub-menu {
+      transition: 0.3s;
+      display: table;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      background: $primary;
+      box-shadow: $shadow;
+      min-width: 200px;
+      top: $menu-height;
+      li {
+        display: block;
+        text-align: left;
+        &:hover {
+          background: $primary-dark;
+        }
+        &:not(:last-child) {
+          border-bottom: 1px solid $border-color;
+        }
+      }
+      a {
+        line-height: normal;
+        padding: $grid-padding;
+        color: #fff;
+      }
+    }
+  }
+}
+#site-header.fixed {
+  position: fixed;
+  width: 100%;
+  & + * {
+    padding-top: $menu-height;
+  }
+}
+
+// Mobile
+@include media-breakpoint-down(sm) {
+  #site-header {
+    .container {
+      padding: 0;
+      width: 100%;
+    }
+    .logo-title {
+      margin: 0;
+      padding: 0 0 0 $grid-padding * 2;
+      height: $menu-height;
+      & > * {
+        line-height: $menu-height;
+      }
+    }
+    .hamburger {
+      display: inline-block;
+      cursor: pointer;
+    }
+    .menu-container {
+      padding: 0;
+      flex: none;
+      width: 100%;
+      position: absolute;
+      top: $menu-height;
+      background-color: #fff;
+      box-shadow: $shadow;
+      left: 100vw;
+      transition: 0.3s;
+    }
+    .header-menu {
+      transition: 0.3s;
+      overflow-y: hidden;
+      width: 100%;
+      padding: 0;
+      position: relative;
+      ul {
+        li.menu-item {
+          display: block;
+          border-top: 1px solid $border-color;
+          position: relative;
+          a {
+            line-height: normal;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            padding: $grid-padding * 2;
+          }
+          .sub-menu {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  #site-header.fixed + * {
+    padding-top: $menu-height;
+  }
+}
