@@ -6,7 +6,8 @@
   "scripts": {
     "start": "run-p start:**",
     "start:hugo": "hugo server",
-    "start:webpack": "webpack --watch"
+    "start:webpack": "NODE_ENV=development webpack --mode=development --watch",
+    "build": "NODE_ENV=production webpack --mode=production && hugo"
   },
   "repository": {
     "type": "git",
