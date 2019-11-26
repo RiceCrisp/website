@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/index.min.css" media="all">
+    <script src="/dist/index.min.js" media="all" defer></script>
+  </head>
+  <body>
+    {{- partial "header.html" . -}}
+    <div id="content">
+    {{- block "main" . }}{{- end }}
+    </div>
+    {{- partial "footer.html" . -}}
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>
+          <a href="/" rel="home">My Hugo Site</a>
+        </h1>
+      </div>
+      <div class="col">
+        {{ if .Site.Menus.main }}
+          <nav>
+            <ul>
+              {{ range .Site.Menus.main }}
+              <li>
+                <a href="{{ .URL }}" title="{{ .Name }} page">
+                  {{ .Name }}
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+          </nav>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</header>
