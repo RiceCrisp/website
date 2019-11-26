@@ -34,7 +34,7 @@ module.exports = (env, argv) => ({
   plugins: [
     new AssetsPlugin({
       filename: 'assets.json',
-      path: path.resolve(__dirname, themeDir + 'static/dist')
+      path: path.resolve(__dirname, themeDir + 'data')
     }),
     new FixStyleOnlyEntriesPlugin({
       silent: true

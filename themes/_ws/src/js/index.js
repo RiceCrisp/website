@@ -19,24 +19,22 @@ if (typeof NodeList !== 'undefined' && NodeList.prototype) {
 const tz = new Date().getTimezoneOffset() // minutes
 document.cookie = `tzOffset=${tz};path=/`
 
-mods.customSelect() // Must come before achiveListener
-mods.accordion()
-mods.archiveListener()
-mods.caseStory()
+// mods.customSelect() // Must come before achiveListener
+// mods.accordion()
+// mods.archiveListener()
 // mods.forceMinMax()
-mods.forms()
-mods.header()
+// mods.forms()
+// mods.header()
 // mods.iframeComm()
-mods.infiniteButton()
+// mods.infiniteButton()
 // mods.infiniteScroll()
 mods.scrollListener()
 mods.lazy()
-mods.logos()
-mods.animate()
-mods.lightbox()
+// mods.animate()
+// mods.lightbox()
 // mods.serviceWorker()
 // mods.slider()
-mods.socialShare()
-mods.tabbedPanels()
+// mods.socialShare()
+// mods.tabbedPanels()
 
 document.body.classList.remove('no-transitions') // Prevents CSS transitions on page load

@@ -27,10 +27,6 @@ div {
   font-weight: $normal;
 }
 
-:focus {
-  outline-color: $dawn;
-}
-
 p, a, li, input, label, legend, button, select, td, figcaption, blockquote, pre, small {
   @include text;
 }
@@ -64,10 +60,10 @@ p {
 }
 
 a, .a {
-  color: $dawn;
+  color: $blue;
   transition: 0.3s ease-in-out;
   &:hover, &:focus {
-    color: $dawn;
+    color: $blue;
   }
 }
 
@@ -182,10 +178,10 @@ select, .listbox > button {
     white-space: nowrap;
     transition: 0.3s ease-in-out;
     &:hover, &:focus {
-      color: $dawn;
+      color: $blue;
     }
     &.selected {
-      color: $dawn;
+      color: $blue;
       font-weight: $normal;
     }
   }
@@ -326,6 +322,14 @@ video.no-fullscreen {
 
 .no-padding {
   padding: 0;
+}
+
+.no-padding-top {
+  padding-top: 0;
+}
+
+.no-padding-bottom {
+  padding-top: 0;
 }
 
 .no-margin {

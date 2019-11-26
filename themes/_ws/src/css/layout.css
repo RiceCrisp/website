@@ -1,0 +1,27 @@
+section {
+  padding: $section-padding 0;
+  > .container {
+    margin-bottom: -$default-margin;
+  }
+}
+
+.card {
+  .background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: contrast(100%);
+    transition: 0.3s ease-in-out;
+  }
+  &:hover {
+    .background {
+      filter: contrast(50%);
+    }
+  }
+  .card-body {
+    position: relative;
+    background: rgba(#fff, 0.5);
+  }
+}

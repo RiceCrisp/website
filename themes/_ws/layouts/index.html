@@ -1,4 +1,36 @@
+{{ define "title" }}{{- .Site.Title -}}{{ end }}
 {{ define "main" }}
-  <h1>Hello World</h1>
-  <p>This is a test</p>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>{{- .Title -}}</h1>
+          {{- .Content -}}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="no-padding-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="no-margin-top">Latest Posts</h2>
+        </div>
+        <div class="col-xl-8">
+          {{ range first 5 (where .Site.Pages "Type" "=" "post") }}
+            <div class="summary">
+              {{- partial "summary.html" . -}}
+            </div>
+          {{ end }}
+        </div>
+        <div class="col-xl-4">
+          <ul>
+            {{ range .Site.Taxonomies.categories }}
+              <li><a href="{{ .Page.Permalink }}">{{- .Page.Title -}}&nbsp;({{ .Count }})</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 {{ end }}

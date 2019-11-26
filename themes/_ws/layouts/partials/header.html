@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <h1>
+        <h3 class="site-title">
           <a href="/" rel="home">My Hugo Site</a>
-        </h1>
+        </h3>
       </div>
       <div class="col">
         {{ if .Site.Menus.main }}
-          <nav>
+          <nav class="site-nav">
             <ul>
               {{ range .Site.Menus.main }}
               <li>

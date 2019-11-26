@@ -1,0 +1,36 @@
+.site-header {
+  background: #eee;
+}
+
+.site-title {
+  margin: 0;
+  height: 100%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.site-nav {
+  height: 100%;
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 -20px;
+    height: 100%;
+    li {
+      margin: 0;
+      height: 100%;
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px 20px;
+      height: 100%;
+      text-decoration: none;
+    }
+  }
+}

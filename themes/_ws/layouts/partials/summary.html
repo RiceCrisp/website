@@ -1,0 +1,14 @@
+<div class="card-container">
+  <div class="card card-link">
+    <div class="background" style="background-image: url({{ .Params.featured_img }})"></div>
+    <div class="card-body">
+      <span class="section">{{ humanize .Type }}</span>
+      <h3 class="summary-title">
+        <a href="{{ .Permalink }}" >{{ .Title }}</a>
+      </h3>
+      <div class="summary-desc">
+        {{ .Summary }}
+      </div>
+    </div>
+  </div>
+</div>
