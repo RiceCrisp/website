@@ -232,8 +232,18 @@ blockquote {
 }
 
 pre {
+  padding: 20px;
   word-break: break-word;
   word-wrap: break-word;
+  overflow: scroll;
+  margin: 0 0 $default-margin;
+}
+
+code {
+  display: inline-block;
+  font-size: 17px;
+  line-height: 1.4em;
+  padding: 2px 4px;
 }
 
 figure {

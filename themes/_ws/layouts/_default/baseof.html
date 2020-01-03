@@ -2,8 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
     <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }}{{ end }} | {{ .Site.Title }}{{ end }}</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather:300,700&display=swap" rel="stylesheet">
     {{ $assets := .Site.Data.assets }}
     {{ with $assets.css.css }}
       <link href="/dist/{{ . }}" rel="stylesheet">
@@ -11,8 +14,29 @@
     {{ with $assets.js.js }}
       <script src="/dist/{{ . }}" media="all" defer></script>
     {{ end }}
+
+    {{ if or .Params.metaDescription .Summary }}
+      <meta name="description" content="{{- .Params.metaDescription | default .Summary | plainify -}}" />
+    {{ end }}
+    {{ with .Params.metaKeywords }}
+      <meta name="keywords" content="{{- . -}}" />
+    {{ end }}
+    <meta name="robots" content="{{- .Params.robots | default "INDEX, FOLLOW" -}}" />
+    <link rel="canonical" href="{{- .Params.canonical | default .Permalink -}}" />
+
+    <meta property="og:site_name" content="{{- .Site.Title -}}" />
+    <meta property="og:title" content="{{- .Params.socialTitle | default .Title -}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{- .Params.canonical | default .Permalink -}}" />
+    {{ if or .Params.socialImg .Params.featuredImg }}
+      <meta property="og:image" content="{{- .Params.socialImg | default .Params.featuredImg -}}" />
+    {{ end }}
+    {{ if or .Params.socialDescription .Params.metaDescription .Summary }}
+      <meta property="og:description" content="{{- .Params.socialDescription | default .Params.metaDescription | default .Summary -}}" />
+    {{ end }}
+    <meta name="twitter:card" content="{{ if .Params.socialImg }}summary_large_image{{ else }}summary{{ end }}" />
   </head>
-  <body>
+  <body class="no-transitions">
     {{- partial "header.html" . -}}
     <div id="content">
     {{- block "main" . }}{{- end }}

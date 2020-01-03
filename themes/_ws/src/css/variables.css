@@ -1,18 +1,18 @@
 $blue: #0af;
 $gray: #eee;
 $grey: $gray;
-$text-color: $333;
-$text-color-light: #b4b4b4;
+$text-color: #333;
+$text-color-light: #ccc;
 $border-color: #ddd;
 $border-radius: 0;
 $shadow: 0 5px 20px rgba(#000, 0.2);
 $shadow-2: 0 0 10px rgba(#000, 0.1);
-$font: 'Raleway', Helvetica, sans-serif;
-$heading-font: $font;
-$normal: 400;
+$font: 'Merriweather', Helvetica, sans-serif;
+$heading-font: 'Lato', Helvetica, sans-serif;
+$normal: 300;
 $light: 300;
 $bold: 700;
-$default-margin: 20px;
+$default-margin: 40px;
 $input-padding: 10px;
 $input-margin: 20px;
 $menu-height: 80px;
@@ -201,7 +201,7 @@ $padding-options: (-100, -50, 0, 50, 100, 150, 200);
 
 @mixin text {
   font-family: $font;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: $normal;
   line-height: 1.6em;
 }
@@ -212,7 +212,7 @@ $padding-options: (-100, -50, 0, 50, 100, 150, 200);
   font-weight: $normal;
   line-height: 1.5em;
   @if $size == 1 {
-    font-size: 50px;
+    font-size: 42px;
     line-height: 1.25em;
     margin: 0 0 $default-margin;
     @media (--xs-down) {
@@ -222,15 +222,20 @@ $padding-options: (-100, -50, 0, 50, 100, 150, 200);
   @if $size == 2 {
     font-size: 34px;
     line-height: 1.3em;
-    margin-top: calc(3 * $default-margin);
-  }
-  @if $size == 3 {
-    font-size: 24px;
-    line-height: 1.4em;
     margin-top: calc(2 * $default-margin);
   }
+  @if $size == 3 {
+    font-size: 28px;
+    line-height: 1.4em;
+    margin-top: calc(1.5 * $default-margin);
+  }
   @if $size == 4 {
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: $bold;
+    color: $text-color-light;
+    + pre, + .highlight {
+      margin-top: -$default-margin;
+    }
   }
   @if $size == 5 {
     font-size: 18px;
@@ -239,6 +244,7 @@ $padding-options: (-100, -50, 0, 50, 100, 150, 200);
     font-size: 18px;
   }
   a, button {
+    font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
@@ -261,7 +267,9 @@ $padding-options: (-100, -50, 0, 50, 100, 150, 200);
 @mixin subhead {
   text-decoration: none;
   font-size: 16px;
+  font-weight: $bold;
   color: $blue;
+  text-transform: uppercase;
 }
 
 @mixin overlay($color: #000, $opacity: 0.55) { /* 0.55 satisfies WCAG AA w/ white text */

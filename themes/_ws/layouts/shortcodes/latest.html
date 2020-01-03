@@ -1,0 +1,7 @@
+<div class="row">
+  {{ range first 5 (where .Site.Pages "Type" "=" "post") }}
+    <div class="col-sm-6 col-lg-4">
+      {{- partial "summary.html" . -}}
+    </div>
+  {{ end }}
+</div>

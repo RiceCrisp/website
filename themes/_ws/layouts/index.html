@@ -14,16 +14,14 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h2 class="no-margin-top">Latest Posts</h2>
+          <h2 class="no-margin-top">Latest</h2>
         </div>
-        <div class="col-xl-8">
-          {{ range first 5 (where .Site.Pages "Type" "=" "post") }}
-            <div class="summary">
-              {{- partial "summary.html" . -}}
-            </div>
+        <div class="col-lg-7 col-xl-7">
+          {{ range where .Site.Pages "Type" "=" "post" | first 5 }}
+            {{- partial "summary_large.html" . -}}
           {{ end }}
         </div>
-        <div class="col-xl-4">
+        <div class="col-lg-5 col-xl-offset-1 col-xl-4">
           <ul>
             {{ range .Site.Taxonomies.categories }}
               <li><a href="{{ .Page.Permalink }}">{{- .Page.Title -}}&nbsp;({{ .Count }})</a></li>

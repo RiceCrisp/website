@@ -16,9 +16,6 @@ if (typeof NodeList !== 'undefined' && NodeList.prototype) {
   }
 }
 
-const tz = new Date().getTimezoneOffset() // minutes
-document.cookie = `tzOffset=${tz};path=/`
-
 // mods.customSelect() // Must come before achiveListener
 // mods.accordion()
 // mods.archiveListener()
@@ -28,8 +25,8 @@ document.cookie = `tzOffset=${tz};path=/`
 // mods.iframeComm()
 // mods.infiniteButton()
 // mods.infiniteScroll()
-mods.scrollListener()
-mods.lazy()
+// mods.scrollListener()
+// mods.lazy()
 // mods.animate()
 // mods.lightbox()
 // mods.serviceWorker()

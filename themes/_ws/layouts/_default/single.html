@@ -1,10 +1,35 @@
 {{ define "main" }}
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h1>{{- .Title -}}</h1>
-        {{- .Content -}}
+  <section class="single-post">
+    <div class="container">
+      <div class="row">
+        <div class="col-text">
+          {{ with .Resources.GetMatch "Featured Image" }}
+            {{ $image := .Fill "800x400 Center" }}
+            <img loading="lazy" class="featured-image" src="{{ $image.Permalink }}" alt="{{ $image.Title }}" />
+          {{ else }}
+            <div class="featured-image" style="background-image:linear-gradient(100deg, #0af, #07b)"></div>
+          {{ end }}
+          <h1 class="post-title">{{- .Title -}}</h1>
+          {{- .Content -}}
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+  {{ $related := .Site.RegularPages.Related . | first 3 }}
+  {{ with $related }}
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-8 col-xl-offset-2 col-lg-10 col-lg-offset-1">
+            <h3>See Also</h3>
+          </div>
+          {{ range . }}
+            <div class="col-sm-6 col-lg-4">
+              {{- partial "summary.html" . -}}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
 {{ end }}

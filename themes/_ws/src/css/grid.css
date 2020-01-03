@@ -3,6 +3,7 @@
   margin-left: auto;
   padding-right: $container-padding;
   padding-left: $container-padding;
+  max-width: 1200px;
 }
 
 .row {
@@ -31,14 +32,14 @@ ul.row {
 
 @each $breakpoint $breakname in $breaks {
   @media (--$(breakname)-up) {
-    .container {
+    /* .container {
       @if $breakname == xs {
         width: 100%;
       }
       @else {
         width: $(breakpoint);
       }
-    }
+    } */
     @for $size from 1 to 12 {
       .col-$(breakname)-$(size) {
         @include col-size($size);

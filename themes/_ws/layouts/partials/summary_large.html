@@ -1,0 +1,18 @@
+<div class="summary-large card-container">
+  <div class="card-link">
+    <!-- <div class="background" style="background-image: url({{ .Params.featuredImg }})"></div> -->
+    {{ with .Resources.GetMatch "Featured Image" }}
+      {{ $image := .Fill "800x400 Center" }}
+      <img class="featured-image" src="{{ $image.Permalink }}" alt="{{ $image.Title }}" loading="lazy" width="800" height="400" />
+    {{ else }}
+      <div class="featured-image"></div>
+    {{ end }}
+    <span class="subheading">{{ humanize .Type }}</span>
+    <h3 class="summary-title">
+      <a href="{{ .Permalink }}" >{{ .Title }}</a>
+    </h3>
+    <div class="summary-desc">
+      {{ .Summary }}
+    </div>
+  </div>
+</div>

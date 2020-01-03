@@ -2,3 +2,15 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "_ws"
+pygmentsUseClasses = true
+
+[related]
+  threshold = 80
+  includeNewer = false
+  toLower = false
+[[related.indices]]
+  name = "categories"
+  weight = 100
+[[related.indices]]
+  name  = "date"
+  weight = 10
