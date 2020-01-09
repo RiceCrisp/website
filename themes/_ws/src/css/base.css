@@ -27,7 +27,7 @@ div {
   font-weight: $normal;
 }
 
-p, a, li, input, label, legend, button, select, td, figcaption, blockquote, pre, small {
+p, a, li, input, label, legend, button, select, td, th, figcaption, blockquote, pre, small {
   @include text;
 }
 
@@ -217,11 +217,31 @@ video {
 table {
   width: 100%;
   margin: 0 0 $default-margin;
+  border: 1px solid $border-color;
 }
 
 td, th {
-  padding: 10px;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-family: $heading-font;
 }
+
+tr {
+  border-bottom: 1px solid $border-color;
+}
+
+td {
+  font-weight: 400;
+}
+
+th {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* tr:nth-child(even) {
+  background: #eee;
+} */
 
 hr {
   @include hr;

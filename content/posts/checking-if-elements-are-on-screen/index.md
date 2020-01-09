@@ -6,6 +6,8 @@ resources:
 - src: truck.jpg
   title: "Truck"
   name: "Featured Image"
+categories:
+- JavaScript
 ---
 
 Whether it's lazy loading images, animating elements when they enter the viewport, or loading more content when you reach the end of a list (infinite scroll), there are a lot of scenarios in javascript when we want to see if an element is on-screen.
